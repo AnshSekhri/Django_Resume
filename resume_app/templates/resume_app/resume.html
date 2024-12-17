@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Resume</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'background.mp4' %}" type="video/mp4">
+    </video>
+
+    <!-- Sticky Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+
+    <section id="intro-summary">
+        <h2>Introductory Summary</h2>
+        <p>
+            I am a passionate and driven <strong>Django Developer</strong> with a strong foundation in <strong>Python</strong>, <strong>Django</strong>, and <strong>SQL</strong>. 
+            Over the past few years, I've had the opportunity to work on cutting-edge web applications, where I’ve developed a deep understanding of creating 
+            <em>scalable, secure, and efficient systems</em> that deliver real-world solutions. My expertise lies in building <strong>dynamic websites</strong>, 
+            integrating <strong>RESTful APIs</strong>, and leveraging <strong>data-driven approaches</strong> to improve user experience and performance. 
+            <br><br>
+            I am passionate about solving complex problems and continuously improving my skill set. I thrive in collaborative environments, where I can leverage my 
+            problem-solving abilities and creative thinking to drive innovation. Currently, I am looking for opportunities to contribute to impactful projects that 
+            harness the power of <strong>AI, Machine Learning</strong>, and <strong>web technologies</strong> to create meaningful experiences for users.
+        </p>
+    </section>
+
+    <!-- Header Section -->
+    <header>
+        <h1>{{ name }}</h1>
+        <p>{{ contact.location }} | 📧 {{ contact.email }} | 📞 {{ contact.phone }}</p>
+        <p>
+            <a href="https://www.linkedin.com/in/ansh-sekhri-173146159/" target="_blank">LinkedIn</a> |
+            <a href="{{ contact.github }}" target="_blank">GitHub</a>
+        </p>
+    </header>
+
+    <!-- Experience Section -->
+<section id="experience">
+    <h2>Experience</h2>
+    <ul>
+        <!-- Suvidha Mahila Mandal -->
+        <li class="experience-item">
+            <strong>Associate • Internship (Aug 2023 - Sep 2023)</strong>
+            <br>Suvidha Mahila Mandal, Virtual
+            <div class="experience-details">
+                <ul>
+                    <li>Developed a text summarization pipeline using Python to generate concise and informative summaries of different types of text.</li>
+                    <li>Collaborated with researchers on new text summarization techniques. <a href="https://drive.google.com/file/d/1TbQJkdhIOKkR1R_w4Am0og8syVaphPQw/view?usp=drive_link" target="_blank">Read more</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Learn with Leaders -->
+        <li class="experience-item">
+            <strong>Data Research Analyst • Internship (Dec 2022 - Jan 2023)</strong>
+            <br>Learn With Leaders, Virtual
+            <div class="experience-details">
+                <ul>
+                    <li>Intern at Learn with Leaders | Data Research & Outreach Specialist Passionate about driving impactful educational programs through data research and strategic outreach.</li>
+                    <li><strong>Skills:</strong></li>
+                    <ul>
+                        <li>Data Research: Identifying and evaluating schools for program engagement.</li>
+                        <li>Outreach: Building partnerships to promote Learn with Leaders’ mission.</li>
+                        <li>Excel Expertise: Managing and analyzing data to improve efficiency.</li>
+                        <li>Program Support: Collaborating with teams to enhance program impact.</li>
+                    </ul>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <!-- Music Recommendation System -->
+        <li>
+            <strong>Music Recommendation System</strong>: A content-based filtering system built using Django and Python to recommend music based on user preferences.
+            <ul>
+                <li><strong>Technologies:</strong> Django, Python, SQLite, JavaScript, HTML, CSS</li>
+                <li><strong>Duration:</strong> 3 months</li>
+                <li><strong>Key Features:</strong> Real-time recommendations, Personalized user experience, Integration with Spotify API</li>
+            </ul>
+            <!-- Trigger Modal Button -->
+            <button class="modal-btn" onclick="openModal('modal1')">View Project Details</button>
+
+            <!-- The Modal -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modal1')">×</span>
+                    <h2>Music Recommendation System Details</h2>
+                    <p><strong>Project Overview:</strong> This project implements a content-based recommendation system that suggests music to users based on their preferences and listening history. The system fetches real-time data from the Spotify API to provide personalized suggestions.</p>
+                    <p><strong>Technologies Used:</strong> Django, Python, SQLite, JavaScript, HTML, CSS</p>
+                    <p><strong>Challenges Solved:</strong> Implemented an efficient algorithm to analyze user preferences and reduce recommendation latency. Managed real-time API data integration.</p>
+                    <p><strong>Key Achievements:</strong> Successfully integrated the Spotify API, providing dynamic and personalized recommendations. Reduced latency by 40% through database query optimization.</p>
+                </div>
+            </div>
+        </li>
+
+        <!-- E-commerce Web App -->
+        <li>
+            <strong>E-commerce Web App</strong>: A fully functional e-commerce web application with product management, cart, and payment gateway integration.
+            <ul>
+                <li><strong>Technologies:</strong> Django, PostgreSQL, JavaScript, Stripe API</li>
+                <li><strong>Duration:</strong> 4 months</li>
+                <li><strong>Key Features:</strong> User authentication, Product management, Payment processing with Stripe</li>
+            </ul>
+            <!-- Trigger Modal Button -->
+            <button class="modal-btn" onclick="openModal('modal2')">View Project Details</button>
+
+            <!-- The Modal -->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modal2')">×</span>
+                    <h2>E-commerce Web App Details</h2>
+                    <p><strong>Project Overview:</strong> Developed an e-commerce platform where users can browse products, add them to the cart, and complete purchases via a payment gateway. Integrated Stripe for secure payments.</p>
+                    <p><strong>Technologies Used:</strong> Django, PostgreSQL, JavaScript, Stripe API</p>
+                    <p><strong>Challenges Solved:</strong> Integrated Stripe API for secure transactions. Implemented real-time cart functionality with persistent session management.</p>
+                    <p><strong>Key Achievements:</strong> Successfully integrated user authentication, product management, and payment systems. Ensured PCI-DSS compliance for secure transactions.</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            {% for edu in education %}
+                <li>{{ edu.degree }} - {{ edu.school }} ({{ edu.year }})</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 {{ name }}. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
